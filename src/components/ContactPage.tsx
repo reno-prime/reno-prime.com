@@ -9,20 +9,20 @@ import { company, localizePath, type Locale } from "@/lib/content";
 const contactCopy = {
   fr: {
     heroEyebrow: "Contact RenoPrime",
-    heroTitle: "Parlons de votre projet de renovation.",
+    heroTitle: "Parlons de votre projet de rénovation.",
     heroText:
-      "Appelez, envoyez un courriel ou utilisez le formulaire pour partager les grandes lignes de votre projet. RenoPrime vous repondra avec les prochaines etapes.",
+      "Appelez, envoyez un courriel ou utilisez le formulaire pour partager les grandes lignes de votre projet. RenoPrime vous répondra avec les prochaines étapes.",
     formEyebrow: "Nous joindre",
     formTitle: "Une conversation claire avant de commencer.",
     formText:
-      "Indiquez la piece, le secteur, l'echeancier souhaite et les details importants. Pour une estimation plus complete, vous pouvez aussi utiliser la page de soumission.",
+      "Indiquez la pièce, le secteur, l'échéancier souhaité et les détails importants. Pour une estimation plus complète, vous pouvez aussi utiliser la page de soumission.",
     cards: [
-      ["Telephone", company.phone],
+      ["Téléphone", company.phone],
       ["Courriel", company.email],
       ["Territoire", company.serviceArea],
       ["Licence RBQ", company.rbq],
     ],
-    availability: "Reponse rapide pour les projets residentiels a Montreal et au Quebec.",
+    availability: "Réponse rapide pour les projets résidentiels à Montréal et au Québec.",
     quote: "Obtenir une soumission",
   },
   en: {

@@ -5,25 +5,25 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://reno-prime.com"),
   title: {
-    default: "RenoPrime | Renovations residentielles a Montreal & Quebec",
+    default: "RenoPrime | Rénovations résidentielles à Montréal & Québec",
     template: "%s | RenoPrime",
   },
   description:
-    "Renovations residentielles haut de gamme, cuisines, salles de bain, sous-sols, gypse, peinture, planchers, ceramique, moulures et services de renovation interieure a Montreal et au Quebec.",
+    "Rénovations résidentielles haut de gamme, cuisines, salles de bain, sous-sols, gypse, peinture, planchers, céramique, moulures et services de rénovation intérieure à Montréal et au Québec.",
   keywords: [
     "RenoPrime",
     "Montreal renovations",
     "Quebec renovations",
-    "renovation Montreal",
-    "renovation Quebec",
+    "rénovation Montréal",
+    "rénovation Québec",
     "kitchen renovation",
     "bathroom renovation",
     "RBQ licensed contractor",
   ],
   openGraph: {
-    title: "RenoPrime | Renovations residentielles",
+    title: "RenoPrime | Rénovations résidentielles",
     description:
-      "Services de renovation avec licence RBQ pour les maisons de Montreal et du Quebec.",
+      "Services de rénovation avec licence RBQ pour les maisons de Montréal et du Québec.",
     url: "https://reno-prime.com",
     siteName: "RenoPrime",
     images: [

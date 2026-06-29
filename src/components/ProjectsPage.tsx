@@ -36,58 +36,58 @@ type ProjectCategory = {
 const projectCopy = {
   fr: {
     heroEyebrow: "Projets RenoPrime",
-    heroTitle: "Travaux reels, organises par type de piece.",
+    heroTitle: "Travaux réels, organisés par type de pièce.",
     heroText:
-      "Parcourez des projets de cuisine, salle de bain et renovation interieure, incluant des pieces terminees et du travail en cours.",
-    ctaEyebrow: "Demarrer votre projet",
-    ctaTitle: "Une piece prete pour une planification plus claire?",
+      "Parcourez des projets de cuisine, salle de bain et rénovation intérieure, incluant des pièces terminées et du travail en cours.",
+    ctaEyebrow: "Démarrer votre projet",
+    ctaTitle: "Une pièce prête pour une planification plus claire?",
     ctaText:
-      "Envoyez quelques details et RenoPrime fera un suivi sur la portee, l'echeancier et les prochaines etapes.",
+      "Envoyez quelques détails et RenoPrime fera un suivi sur la portée, l'échéancier et les prochaines étapes.",
     getQuote: "Obtenir une soumission",
     viewServices: "Voir les services",
     categories: [
       {
         label: "Cuisine",
-        title: "Renovations de cuisine",
-        intro: "Mises a jour pratiques avec dispositions plus propres, finis rafraichis et surfaces durables.",
+        title: "Rénovations de cuisine",
+        intro: "Mises à jour pratiques avec dispositions plus propres, finis rafraîchis et surfaces durables.",
         projects: [
-          ["Rafraichissement de cuisine", "Transformation avant/apres montrant des armoires mises a jour, un nouveau plancher et une finition plus moderne.", "Avant / Apres"],
+          ["Rafraîchissement de cuisine", "Transformation avant/après montrant des armoires mises à jour, un nouveau plancher et une finition plus moderne.", "Avant / Après"],
         ],
       },
       {
         label: "Salle de bain",
-        title: "Renovations de salle de bain",
-        intro: "Mises a jour axees sur la ceramique, la preparation des surfaces, les lignes propres et la coordination de finition.",
+        title: "Rénovations de salle de bain",
+        intro: "Mises à jour axées sur la céramique, la préparation des surfaces, les lignes propres et la coordination de finition.",
         projects: [
-          ["Progression de salle de bain", "Transformation montrant la preparation, la structure et les etapes avant l'installation propre de la douche et de la ceramique.", "Avant / Apres"],
+          ["Progression de salle de bain", "Transformation montrant la préparation, la structure et les étapes avant l'installation propre de la douche et de la céramique.", "Avant / Après"],
         ],
       },
       {
         label: "Plafonds",
-        title: "Reparations de plafond",
-        intro: "Travaux de plafond montrant des surfaces abimees restaurees avec preparation, gypse, joints et tirage.",
+        title: "Réparations de plafond",
+        intro: "Travaux de plafond montrant des surfaces abîmées restaurées avec préparation, gypse, joints et tirage.",
         projects: [
-          ["Reparation de plafond et joints", "Plafond abime repare et amene a une etape propre de preparation avec gypse, joints et tirage.", "Avant / Apres"],
+          ["Réparation de plafond et joints", "Plafond abîmé réparé et amené à une étape propre de préparation avec gypse, joints et tirage.", "Avant / Après"],
         ],
       },
       {
-        label: "Interieur",
-        title: "Renovations interieures",
-        intro: "Ameliorations interieures incluant plancher, peinture, gypse, moulures et preparation.",
+        label: "Intérieur",
+        title: "Rénovations intérieures",
+        intro: "Améliorations intérieures incluant plancher, peinture, gypse, moulures et préparation.",
         projects: [
-          ["Renovation de piece interieure", "Espace transforme d'un chantier actif en piece plus propre avec plancher fini et surfaces plus lumineuses.", "Avant / Apres"],
-          ["Details de finition interieure", "Vue additionnelle d'un espace termine montrant la continuite du plancher, les murs peints et une circulation pratique.", "Travail termine"],
-          ["Aire de vie interieure", "Autre vue terminee montrant le plancher renove, les murs peints et une disposition propre.", "Travail termine"],
+          ["Rénovation de pièce intérieure", "Espace transformé d'un chantier actif en pièce plus propre avec plancher fini et surfaces plus lumineuses.", "Avant / Après"],
+          ["Détails de finition intérieure", "Vue additionnelle d'un espace terminé montrant la continuité du plancher, les murs peints et une circulation pratique.", "Travail terminé"],
+          ["Aire de vie intérieure", "Autre vue terminée montrant le plancher rénové, les murs peints et une disposition propre.", "Travail terminé"],
         ],
       },
       {
         label: "Gypse & Joints",
         title: "Gypse et tirage de joints",
-        intro: "Travaux de gypse et tirage qui preparent les murs et plafonds pour une surface finale propre.",
+        intro: "Travaux de gypse et tirage qui préparent les murs et plafonds pour une surface finale propre.",
         projects: [
-          ["Gypse et joints en progression", "Travaux en cours montrant la preparation de gypse, le plafond, les joints et le tirage avant la peinture.", "En cours"],
-          ["Tirage de joints en piece", "Joints et tirage en cours sur les murs et plafonds, montrant la preparation derriere une finition lisse.", "En cours"],
-          ["Preparation de piece en gypse", "Preparation de murs et plafond avant sablage, apprêt et finition finale.", "En cours"],
+          ["Gypse et joints en progression", "Travaux en cours montrant la préparation de gypse, le plafond, les joints et le tirage avant la peinture.", "En cours"],
+          ["Tirage de joints en pièce", "Joints et tirage en cours sur les murs et plafonds, montrant la préparation derrière une finition lisse.", "En cours"],
+          ["Préparation de pièce en gypse", "Préparation de murs et plafond avant sablage, apprêt et finition finale.", "En cours"],
         ],
       },
     ],
@@ -195,6 +195,19 @@ const projectImages = [
   ],
 ];
 
+const sliderCopy = {
+  fr: {
+    before: "Avant",
+    after: "Après",
+    compare: "Glisser pour comparer avant et après",
+  },
+  en: {
+    before: "Before",
+    after: "After",
+    compare: "Slide to compare before and after",
+  },
+};
+
 function getProjectCategories(locale: Locale): ProjectCategory[] {
   return projectCopy[locale].categories.map((category, categoryIndex) => ({
     label: category.label,
@@ -222,7 +235,7 @@ export function ProjectsPage({ locale = "fr" }: PageProps) {
       <ProjectsHero locale={locale} categories={categories} />
       <CategoryNav categories={categories} />
       {categories.map((category) => (
-        <ProjectCategory key={category.label} category={category} />
+        <ProjectCategory key={category.label} category={category} locale={locale} />
       ))}
       <ProjectsCta locale={locale} />
       <SiteFooter locale={locale} />
@@ -298,9 +311,10 @@ function CategoryNav({ categories }: { categories: ProjectCategory[] }) {
 
 type ProjectCategoryProps = {
   category: ProjectCategory;
+  locale: Locale;
 };
 
-function ProjectCategory({ category }: ProjectCategoryProps) {
+function ProjectCategory({ category, locale }: ProjectCategoryProps) {
   return (
     <section id={slugify(category.label)} className="scroll-mt-10 py-18 sm:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -316,9 +330,9 @@ function ProjectCategory({ category }: ProjectCategoryProps) {
           <p className="max-w-2xl text-lg leading-8 text-[#5f5a52]">{category.intro}</p>
         </div>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+        <div className="mx-auto mt-12 grid max-w-5xl gap-8">
           {category.projects.map((project) => (
-            <article key={project.title} className="overflow-hidden bg-white shadow-[0_20px_70px_rgba(0,0,0,0.08)]">
+            <article key={project.title} className="mx-auto w-full overflow-hidden bg-white shadow-[0_20px_70px_rgba(0,0,0,0.08)]">
               {isComparisonProject(project) ? (
                 <BeforeAfterSlider
                   beforeSrc={project.before}
@@ -327,14 +341,17 @@ function ProjectCategory({ category }: ProjectCategoryProps) {
                   afterAlt={`${project.title} after RenoPrime renovation`}
                   label={project.label}
                   imageClassName={project.imageClassName}
+                  beforeText={sliderCopy[locale].before}
+                  afterText={sliderCopy[locale].after}
+                  compareText={sliderCopy[locale].compare}
                 />
               ) : (
-                <div className="relative aspect-[4/3] bg-black">
+                <div className="relative aspect-[16/10] bg-black">
                   <Image
                     src={project.image}
                     alt={`${project.title} by RenoPrime`}
                     fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 960px, 100vw"
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-transparent to-transparent" />

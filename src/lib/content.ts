@@ -6,7 +6,7 @@ export const company = {
   email: "general@renoprime.com",
   emailHref: "mailto:general@renoprime.com",
   rbq: "5875-9804-01",
-  serviceArea: "Montreal & Quebec",
+  serviceArea: "Montréal & Québec",
 };
 
 export type Locale = "fr" | "en";
@@ -47,24 +47,24 @@ export function localizePath(path: string, locale: Locale) {
 }
 
 export const trustItems: Record<Locale, string[]> = {
-  fr: ["Licence RBQ", "5+ ans d'experience", "Francais & English"],
-  en: ["RBQ Licensed", "5+ Years Experience", "English & Francais"],
+  fr: ["Licence RBQ", "5+ ans d'expérience", "Français & English"],
+  en: ["RBQ Licensed", "5+ Years Experience", "English & Français"],
 };
 
 export const services: Record<Locale, string[]> = {
   fr: [
-    "Renovations interieures",
-    "Renovations de cuisine",
-    "Renovations de salle de bain",
+    "Rénovations intérieures",
+    "Rénovations de cuisine",
+    "Rénovations de salle de bain",
     "Finition de sous-sol",
     "Installation de gypse",
     "Tirage de joints",
     "Peinture",
     "Installation de plancher",
-    "Installation de ceramique",
+    "Installation de céramique",
     "Moulures et finition",
-    "Reparations de plafond",
-    "Demolition et preparation",
+    "Réparations de plafond",
+    "Démolition et préparation",
     "Gestion de projet",
   ],
   en: [

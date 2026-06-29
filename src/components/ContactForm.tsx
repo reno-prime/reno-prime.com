@@ -8,7 +8,7 @@ const contactFormCopy = {
   fr: {
     fields: {
       name: "Nom",
-      phone: "Telephone",
+      phone: "Téléphone",
       email: "Courriel",
       subject: "Sujet",
       message: "Message",
@@ -16,10 +16,10 @@ const contactFormCopy = {
     },
     placeholders: {
       subject: "Cuisine, salle de bain, sous-sol...",
-      message: "Decrivez rapidement votre projet, votre secteur et le meilleur moment pour vous joindre.",
+      message: "Décrivez rapidement votre projet, votre secteur et le meilleur moment pour vous joindre.",
     },
     emailIntro: "Bonjour RenoPrime,",
-    emailMessage: "J'aimerais vous contacter au sujet d'un projet de renovation.",
+    emailMessage: "J'aimerais vous contacter au sujet d'un projet de rénovation.",
     emailSubject: "Demande de contact RenoPrime",
   },
   en: {

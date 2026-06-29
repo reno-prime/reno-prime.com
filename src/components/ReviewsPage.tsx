@@ -9,22 +9,22 @@ import { company, localizePath, type Locale } from "@/lib/content";
 const reviewsCopy = {
   fr: {
     eyebrow: "Avis clients",
-    title: "Partagez votre experience avec RenoPrime.",
+    title: "Partagez votre expérience avec RenoPrime.",
     text:
-      "Votre avis aide les futurs proprietaires a comprendre la qualite, la communication et le soin derriere les travaux de RenoPrime.",
+      "Votre avis aide les futurs propriétaires à comprendre la qualité, la communication et le soin derrière les travaux de RenoPrime.",
     principles: [
       "Avis de vrais clients seulement",
-      "Permission confirmee avant publication",
-      "Affichage avec prenom ou anonyme",
-      "Details utiles pour les futurs proprietaires",
+      "Permission confirmée avant publication",
+      "Affichage avec prénom ou anonyme",
+      "Détails utiles pour les futurs propriétaires",
     ],
     asideEyebrow: "Laisser un avis",
-    asideTitle: "Une facon simple pour les premiers clients de partager leur experience.",
+    asideTitle: "Une façon simple pour les premiers clients de partager leur expérience.",
     asideText:
-      "Comme RenoPrime developpe sa presence en ligne, cette page collecte d'abord les avis clients directement. Les avis publics pourront etre ajoutes plus tard apres confirmation de la permission.",
-    verified: "Avis client verifie",
-    ctaEyebrow: "Vous planifiez une renovation?",
-    ctaTitle: "Pret a commencer votre propre projet?",
+      "Comme RenoPrime développe sa présence en ligne, cette page collecte d'abord les avis clients directement. Les avis publics pourront être ajoutés plus tard après confirmation de la permission.",
+    verified: "Avis client vérifié",
+    ctaEyebrow: "Vous planifiez une rénovation?",
+    ctaTitle: "Prêt à commencer votre propre projet?",
     ctaButton: "Obtenir une soumission",
   },
   en: {

@@ -8,18 +8,18 @@ import { company, type Locale } from "@/lib/content";
 const quoteCopy = {
   fr: {
     eyebrow: "Demande de soumission gratuite",
-    title: "Parlez-nous de votre renovation.",
-    text: "Partagez quelques details et RenoPrime fera un suivi pour discuter de la portee, de l'echeancier et des prochaines etapes.",
+    title: "Parlez-nous de votre rénovation.",
+    text: "Partagez quelques détails et RenoPrime fera un suivi pour discuter de la portée, de l'échéancier et des prochaines étapes.",
     details: [
-      "Piece ou secteur a renover",
+      "Pièce ou secteur à rénover",
       "Condition actuelle et objectifs de finition",
-      "Echeancier souhaite",
-      "Photos ou notes peuvent etre envoyees par courriel apres la demande",
+      "Échéancier souhaité",
+      "Photos ou notes peuvent être envoyées par courriel après la demande",
     ],
-    asideEyebrow: "Details de la demande",
-    asideTitle: "Une premiere etape simple vers une estimation claire.",
+    asideEyebrow: "Détails de la demande",
+    asideTitle: "Une première étape simple vers une estimation claire.",
     asideText:
-      "Pour les demandes urgentes, appelez directement. Pour les photos du projet, envoyez-les par courriel apres la demande.",
+      "Pour les demandes urgentes, appelez directement. Pour les photos du projet, envoyez-les par courriel après la demande.",
   },
   en: {
     eyebrow: "Free Quote Request",

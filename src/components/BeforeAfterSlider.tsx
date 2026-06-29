@@ -11,6 +11,9 @@ type BeforeAfterSliderProps = {
   afterAlt: string;
   label?: string;
   imageClassName?: string;
+  beforeText?: string;
+  afterText?: string;
+  compareText?: string;
 };
 
 export function BeforeAfterSlider({
@@ -20,16 +23,19 @@ export function BeforeAfterSlider({
   afterAlt,
   label = "renovation",
   imageClassName = "object-cover",
+  beforeText = "Before",
+  afterText = "After",
+  compareText = "Slide to compare before and after",
 }: BeforeAfterSliderProps) {
   const [position, setPosition] = useState(52);
 
   return (
-    <div className="group relative min-h-[460px] overflow-hidden bg-[#171717] sm:min-h-[560px]">
+    <div className="group relative min-h-[460px] overflow-hidden bg-[#171717] sm:min-h-[560px] lg:min-h-[620px]">
       <Image
         src={afterSrc}
         alt={afterAlt}
         fill
-        sizes="(min-width: 1024px) 45vw, 100vw"
+        sizes="(min-width: 1024px) 960px, 100vw"
         className={imageClassName}
       />
       <div
@@ -40,7 +46,7 @@ export function BeforeAfterSlider({
           src={beforeSrc}
           alt={beforeAlt}
           fill
-          sizes="(min-width: 1024px) 45vw, 100vw"
+          sizes="(min-width: 1024px) 960px, 100vw"
           className={imageClassName}
         />
       </div>
@@ -59,15 +65,15 @@ export function BeforeAfterSlider({
 
       <div className="absolute left-5 top-5 flex gap-2">
         <span className="bg-black/72 px-3 py-2 text-xs font-black uppercase tracking-[0.18em] text-white backdrop-blur">
-          Before
+          {beforeText}
         </span>
         <span className="bg-[#f4c430] px-3 py-2 text-xs font-black uppercase tracking-[0.18em] text-black">
-          After
+          {afterText}
         </span>
       </div>
 
       <label className="absolute inset-0 z-10 cursor-ew-resize">
-        <span className="sr-only">Slide to compare before and after {label}</span>
+        <span className="sr-only">{compareText} {label}</span>
         <input
           type="range"
           min="5"
@@ -75,7 +81,7 @@ export function BeforeAfterSlider({
           value={position}
           onChange={(event) => setPosition(Number(event.target.value))}
           className="before-after-range h-full w-full"
-          aria-label={`Compare before and after ${label}`}
+          aria-label={`${compareText} ${label}`}
         />
       </label>
     </div>

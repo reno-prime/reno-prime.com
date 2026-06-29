@@ -10,11 +10,11 @@ type SiteFooterProps = {
 const footerCopy = {
   fr: {
     description:
-      "Renovations residentielles haut de gamme pour les proprietaires de Montreal et du Quebec, avec une planification claire et une finition soigneuse.",
+      "Rénovations résidentielles haut de gamme pour les propriétaires de Montréal et du Québec, avec une planification claire et une finition soigneuse.",
     navigation: "Navigation",
     contact: "Contact",
     copyright: "Copyright 2026 RenoPrime",
-    language: "Experience bilingue Francais / English",
+    language: "Expérience bilingue Français / English",
   },
   en: {
     description:
@@ -22,7 +22,7 @@ const footerCopy = {
     navigation: "Navigation",
     contact: "Contact",
     copyright: "Copyright 2026 RenoPrime",
-    language: "English / Francais bilingual experience",
+    language: "English / Français bilingual experience",
   },
 };
 

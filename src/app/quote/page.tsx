@@ -4,7 +4,7 @@ import { QuotePage } from "@/components/QuotePage";
 export const metadata: Metadata = {
   title: "Obtenir une soumission",
   description:
-    "Demandez une soumission gratuite RenoPrime pour vos travaux de renovation residentielle a Montreal et au Quebec.",
+    "Demandez une soumission gratuite RenoPrime pour vos travaux de rénovation résidentielle à Montréal et au Québec.",
 };
 
 export default function Page() {

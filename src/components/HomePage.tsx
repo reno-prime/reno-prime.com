@@ -17,49 +17,49 @@ import { SiteHeader } from "@/components/SiteHeader";
 
 const homeCopy = {
   fr: {
-    eyebrow: "Renovations a Montreal & Quebec",
-    headline: "Renovations residentielles haut de gamme, realisees avec precision.",
+    eyebrow: "Rénovations à Montréal & Québec",
+    headline: "Rénovations résidentielles haut de gamme, réalisées avec précision.",
     subheadline:
-      "RenoPrime offre des renovations interieures propres et fiables pour les proprietaires qui veulent une planification claire, une finition soignee et un entrepreneur de confiance.",
+      "RenoPrime offre des rénovations intérieures propres et fiables pour les propriétaires qui veulent une planification claire, une finition soignée et un entrepreneur de confiance.",
     estimate: "Obtenir une soumission",
     projects: "Voir les projets",
-    introEyebrow: "Partenaire renovation",
-    introTitle: "Un processus plus clair pour transformer les pieces que vous utilisez chaque jour.",
+    introEyebrow: "Partenaire rénovation",
+    introTitle: "Un processus plus clair pour transformer les pièces que vous utilisez chaque jour.",
     introText:
-      `Dirigee par ${company.owner}, RenoPrime se concentre sur des renovations residentielles bien organisees, de la premiere conversation jusqu'a la visite finale. Les travaux electriques et de plomberie sont geres par des partenaires de confiance lorsque requis.`,
+      `Dirigée par ${company.owner}, RenoPrime se concentre sur des rénovations résidentielles bien organisées, de la première conversation jusqu'à la visite finale. Les travaux électriques et de plomberie sont gérés par des partenaires de confiance lorsque requis.`,
     stats: [
       ["5+", "Ans"],
       ["RBQ", "Licence"],
       ["2", "Langues"],
     ],
     servicesEyebrow: "Services",
-    servicesTitle: "Des travaux de renovation coordonnes avec soin.",
+    servicesTitle: "Des travaux de rénovation coordonnés avec soin.",
     servicesText:
-      "De la charpente et du gypse jusqu'a la ceramique, aux moulures, a la peinture et aux renovations interieures completes, RenoPrime apporte structure et savoir-faire dans les details qui changent l'ambiance d'un espace.",
+      "De la charpente et du gypse jusqu'à la céramique, aux moulures, à la peinture et aux rénovations intérieures complètes, RenoPrime apporte structure et savoir-faire dans les détails qui changent l'ambiance d'un espace.",
     featuredServices: [
       {
         title: "Cuisines et salles de bain",
-        text: "Pieces tres utilisees renovees avec une planification claire, une finition nette et des partenaires specialises lorsque requis.",
+        text: "Pièces très utilisées rénovées avec une planification claire, une finition nette et des partenaires spécialisés lorsque requis.",
       },
       {
-        title: "Sous-sols et interieurs",
-        text: "Espaces confortables et durables, concus pour la vie de tous les jours.",
+        title: "Sous-sols et intérieurs",
+        text: "Espaces confortables et durables, conçus pour la vie de tous les jours.",
       },
       {
-        title: "Details de finition",
-        text: "Gypse, joints, peinture, plancher, ceramique, moulures, charpente et reparations de plafond faits avec soin.",
+        title: "Détails de finition",
+        text: "Gypse, joints, peinture, plancher, céramique, moulures, charpente et réparations de plafond faits avec soin.",
       },
     ],
     featuredWork: "Projet en vedette",
-    kitchenAfter: "Cuisine avant / apres",
+    kitchenAfter: "Cuisine avant / après",
     mindset: "Approche projet",
     projectTitle: "De vrais espaces, une planification pratique, une finition premium.",
     projectText:
-      "Chaque renovation commence avec la maison existante. RenoPrime evalue la piece, planifie les etapes, protege les lieux et garde les details de finition alignes avec les objectifs du client.",
-    qualities: ["Estimations claires", "Chantiers propres", "Materiaux de qualite", "Partenaires de confiance"],
+      "Chaque rénovation commence avec la maison existante. RenoPrime évalue la pièce, planifie les étapes, protège les lieux et garde les détails de finition alignés avec les objectifs du client.",
+    qualities: ["Estimations claires", "Chantiers propres", "Matériaux de qualité", "Partenaires de confiance"],
     contactEyebrow: "Soumission gratuite",
-    contactTitle: "Dites a RenoPrime ce que vous voulez transformer dans votre maison.",
-    start: "Demarrer",
+    contactTitle: "Dites à RenoPrime ce que vous voulez transformer dans votre maison.",
+    start: "Démarrer",
     getQuote: "Obtenir une soumission",
     call: "Appeler",
     email: "Courriel",
@@ -134,6 +134,19 @@ const heroSlides = [
     position: "object-center",
   },
 ];
+
+const sliderCopy = {
+  fr: {
+    before: "Avant",
+    after: "Après",
+    compare: "Glisser pour comparer avant et après",
+  },
+  en: {
+    before: "Before",
+    after: "After",
+    compare: "Slide to compare before and after",
+  },
+};
 
 type PageProps = {
   locale?: Locale;
@@ -318,6 +331,9 @@ function ProjectSection({ locale }: { locale: Locale }) {
             afterSrc="/images/featured-kitchen-after.jpg"
             beforeAlt="Kitchen before RenoPrime renovation"
             afterAlt="Kitchen after RenoPrime renovation"
+            beforeText={sliderCopy[locale].before}
+            afterText={sliderCopy[locale].after}
+            compareText={sliderCopy[locale].compare}
           />
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6">
             <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f4c430]">

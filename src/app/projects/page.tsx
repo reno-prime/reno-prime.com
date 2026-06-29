@@ -4,7 +4,7 @@ import { ProjectsPage } from "@/components/ProjectsPage";
 export const metadata: Metadata = {
   title: "Projets",
   description:
-    "Voyez les projets de renovation RenoPrime, incluant cuisines, salles de bain et renovations interieures a Montreal et au Quebec.",
+    "Voyez les projets de rénovation RenoPrime, incluant cuisines, salles de bain et rénovations intérieures à Montréal et au Québec.",
 };
 
 export default function Page() {

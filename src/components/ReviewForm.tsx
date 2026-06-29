@@ -7,9 +7,9 @@ import type { Locale } from "@/lib/content";
 const reviewFormCopy = {
   fr: {
     projectTypes: [
-      "Renovation de cuisine",
-      "Renovation de salle de bain",
-      "Renovation interieure",
+      "Rénovation de cuisine",
+      "Rénovation de salle de bain",
+      "Rénovation intérieure",
       "Finition de sous-sol",
       "Gypse / Joints",
       "Peinture",
@@ -19,7 +19,7 @@ const reviewFormCopy = {
     permissions: [
       "Oui, RenoPrime peut publier cet avis avec mon prenom.",
       "Oui, mais publiez-le anonymement.",
-      "Non, gardez cet avis prive.",
+      "Non, gardez cet avis privé.",
     ],
     labels: {
       name: "Nom",
@@ -29,20 +29,20 @@ const reviewFormCopy = {
       review: "Votre avis",
       permission: "Permission de publication",
       photos: "Photos du projet",
-      attach: "Ajouter jusqu'a 5 photos du travail termine ou des details du projet",
+      attach: "Ajouter jusqu'à 5 photos du travail terminé ou des détails du projet",
       submit: "Envoyer l'avis",
       submitting: "Envoi en cours",
       privateNote:
-        "Les avis et photos sont d'abord soumis de facon privee afin de confirmer la permission du client et les details du projet avant toute publication.",
+        "Les avis et photos sont d'abord soumis de façon privée afin de confirmer la permission du client et les détails du projet avant toute publication.",
     },
     placeholders: {
       name: "Votre nom",
-      email: "Utilise seulement pour verifier l'avis",
-      review: "Parlez-nous des travaux, de la communication, de la proprete, de l'echeancier et du resultat final.",
+      email: "Utilisé seulement pour vérifier l'avis",
+      review: "Parlez-nous des travaux, de la communication, de la propreté, de l'échéancier et du résultat final.",
     },
-    stars: ["5 etoiles", "4 etoiles", "3 etoiles", "2 etoiles", "1 etoile"],
-    error: "L'avis n'a pas pu etre envoye. Veuillez reessayer.",
-    success: "Merci. Votre avis a ete recu et sera verifie avant publication.",
+    stars: ["5 étoiles", "4 étoiles", "3 étoiles", "2 étoiles", "1 étoile"],
+    error: "L'avis n'a pas pu être envoyé. Veuillez réessayer.",
+    success: "Merci. Votre avis a été reçu et sera vérifié avant publication.",
   },
   en: {
     projectTypes: [
