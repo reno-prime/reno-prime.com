@@ -28,14 +28,21 @@ export const metadata: Metadata = {
     siteName: "RenoPrime",
     images: [
       {
-        url: "/images/kitchen-renovation-hero.jpg",
-        width: 1284,
-        height: 1095,
-        alt: "Residential kitchen renovation by RenoPrime",
+        url: "/images/renoprime-share-card.jpg",
+        width: 1200,
+        height: 630,
+        alt: "RenoPrime renovation company logo",
       },
     ],
     locale: "fr_CA",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RenoPrime | Rénovations résidentielles",
+    description:
+      "Services de rénovation avec licence RBQ pour les maisons de Montréal et du Québec.",
+    images: ["/images/renoprime-share-card.jpg"],
   },
 };
 
