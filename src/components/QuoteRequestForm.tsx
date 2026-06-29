@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { company, type Locale } from "@/lib/content";
+import { type Locale } from "@/lib/content";
 
 const quoteFormCopy = {
   fr: {
@@ -13,12 +13,9 @@ const quoteFormCopy = {
       "Finition de sous-sol",
       "Gypse / Joints",
       "Peinture",
-      "Plancher / Ceramique",
+      "Plancher / Céramique",
       "Autre",
     ],
-    intro: "Bonjour RenoPrime,",
-    request: "J'aimerais demander une soumission gratuite pour une rénovation.",
-    subject: "Demande de soumission rénovation",
     fields: {
       name: "Nom",
       phone: "Téléphone",
@@ -28,21 +25,15 @@ const quoteFormCopy = {
       timeline: "Échéancier",
       details: "Détails du projet",
       send: "Envoyer la demande",
+      sending: "Envoi en cours...",
     },
     placeholders: {
       location: "Montréal, Laval, etc.",
       timeline: "Dès que possible, ce printemps...",
       details: "Dites-nous quelle pièce vous voulez rénover, ce que vous voulez changer et les détails importants.",
     },
-    emailLabels: {
-      name: "Nom",
-      phone: "Téléphone",
-      email: "Courriel",
-      location: "Ville / secteur",
-      projectType: "Type de projet",
-      timeline: "Échéancier",
-      details: "Détails du projet:",
-    },
+    success: "Merci. Votre demande a été envoyée directement à RenoPrime. Nous vous répondrons bientôt.",
+    error: "La demande n'a pas pu être envoyée pour le moment. Vous pouvez aussi appeler ou écrire à RenoPrime directement.",
   },
   en: {
     projectTypes: [
@@ -55,9 +46,6 @@ const quoteFormCopy = {
       "Flooring / Tile",
       "Other",
     ],
-    intro: "Hello RenoPrime,",
-    request: "I would like to request a free renovation quote.",
-    subject: "Free renovation quote request",
     fields: {
       name: "Name",
       phone: "Phone",
@@ -67,21 +55,15 @@ const quoteFormCopy = {
       timeline: "Timeline",
       details: "Project Details",
       send: "Send Quote Request",
+      sending: "Sending...",
     },
     placeholders: {
       location: "Montreal, Laval, etc.",
       timeline: "As soon as possible, this spring...",
       details: "Tell us what room you want renovated, what you want changed, and any important details.",
     },
-    emailLabels: {
-      name: "Name",
-      phone: "Phone",
-      email: "Email",
-      location: "Location",
-      projectType: "Project type",
-      timeline: "Timeline",
-      details: "Project details:",
-    },
+    success: "Thank you. Your request was sent directly to RenoPrime. We will follow up soon.",
+    error: "The request could not be sent right now. You can also call or email RenoPrime directly.",
   },
 };
 
@@ -96,32 +78,45 @@ export function QuoteRequestForm({ locale = "fr" }: { locale?: Locale }) {
     timeline: "",
     message: "",
   });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [statusMessage, setStatusMessage] = useState("");
 
   function updateField(field: keyof typeof form, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
   }
 
-  function submitRequest(event: FormEvent<HTMLFormElement>) {
+  async function submitRequest(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setStatus("sending");
+    setStatusMessage("");
 
-    const body = [
-      copy.intro,
-      "",
-      copy.request,
-      "",
-      `${copy.emailLabels.name}: ${form.name}`,
-      `${copy.emailLabels.phone}: ${form.phone}`,
-      `${copy.emailLabels.email}: ${form.email}`,
-      `${copy.emailLabels.location}: ${form.location}`,
-      `${copy.emailLabels.projectType}: ${form.projectType}`,
-      `${copy.emailLabels.timeline}: ${form.timeline}`,
-      "",
-      copy.emailLabels.details,
-      form.message,
-    ].join("\n");
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, locale }),
+      });
+      const data = (await response.json().catch(() => null)) as { message?: string } | null;
 
-    const subject = encodeURIComponent(copy.subject);
-    window.location.href = `${company.emailHref}?subject=${subject}&body=${encodeURIComponent(body)}`;
+      if (!response.ok) {
+        throw new Error(data?.message || copy.error);
+      }
+
+      setForm({
+        name: "",
+        phone: "",
+        email: "",
+        location: "",
+        projectType: copy.projectTypes[0],
+        timeline: "",
+        message: "",
+      });
+      setStatus("success");
+      setStatusMessage(copy.success);
+    } catch (error) {
+      setStatus("error");
+      setStatusMessage(error instanceof Error ? error.message : copy.error);
+    }
   }
 
   return (
@@ -209,11 +204,23 @@ export function QuoteRequestForm({ locale = "fr" }: { locale?: Locale }) {
         />
       </label>
 
+      {statusMessage ? (
+        <p
+          className={`border px-4 py-3 text-sm font-bold leading-6 ${
+            status === "success" ? "border-[#f4c430]/50 bg-[#fff8df] text-black" : "border-red-200 bg-red-50 text-red-900"
+          }`}
+          role="status"
+        >
+          {statusMessage}
+        </p>
+      ) : null}
+
       <button
         type="submit"
-        className="inline-flex h-14 items-center justify-center gap-3 bg-black px-7 text-sm font-black uppercase tracking-[0.14em] text-white transition hover:bg-[#f4c430] hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f4c430]"
+        disabled={status === "sending"}
+        className="inline-flex h-14 items-center justify-center gap-3 bg-black px-7 text-sm font-black uppercase tracking-[0.14em] text-white transition hover:bg-[#f4c430] hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f4c430] disabled:cursor-wait disabled:bg-black/70 disabled:text-white"
       >
-        {copy.fields.send}
+        {status === "sending" ? copy.fields.sending : copy.fields.send}
         <ArrowRight size={18} aria-hidden="true" />
       </button>
     </form>
