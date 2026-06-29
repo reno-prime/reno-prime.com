@@ -3,8 +3,8 @@ export const company = {
   owner: "Dominik Lebel",
   phone: "514-638-0867",
   phoneHref: "tel:+15146380867",
-  email: "general@renoprime.com",
-  emailHref: "mailto:general@renoprime.com",
+  email: "general@reno-prime.com",
+  emailHref: "mailto:general@reno-prime.com",
   rbq: "5875-9804-01",
   serviceArea: "Montréal & Québec",
 };

@@ -38,7 +38,7 @@ Add these environment variables in Vercel before relying on the live quote form:
 
 ```bash
 RESEND_API_KEY=your_resend_api_key
-QUOTE_EMAIL_TO=general@renoprime.com
+QUOTE_EMAIL_TO=general@reno-prime.com
 QUOTE_EMAIL_FROM=RenoPrime <quotes@reno-prime.com>
 ```
 
