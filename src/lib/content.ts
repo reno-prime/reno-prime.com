@@ -20,7 +20,7 @@ export const navigation: Record<Locale, { label: string; href: string }[]> = {
     { label: "Services", href: "/services" },
     { label: "Avis", href: "/reviews" },
     { label: "Soumission", href: "/quote" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Contact", href: "/contact" },
   ],
   en: [
     { label: "Home", href: "/" },
@@ -28,7 +28,7 @@ export const navigation: Record<Locale, { label: string; href: string }[]> = {
     { label: "Services", href: "/services" },
     { label: "Reviews", href: "/reviews" },
     { label: "Free Quote", href: "/quote" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Contact", href: "/contact" },
   ],
 };
 
